@@ -42,15 +42,6 @@ resource "aws_instance" "centos-instance" {# declara un  recurso instacia aws, y
   key_name = var.key_pair_name  # define la llave que será utilizada para acceder a la instancia y que fue creada previamente en la consola aws
   tags = var.tags # Buscando definicion 
   security_groups = ["${aws_security_group.anctec_instance_centos.name}"] # Asigna a la instancia el SG definido al comienzo el archivo
-  #provisioner "remote-exec"{ # hace una coneccion remota a la instancia una vez que se encuentra corriendo, falta afinar coneccion 
-  #  connection{
-  #    type =  "ssh"
-  #    user = "centos"
-  #    #private_key = file("~/.ssh/id_rsa")
-  #    host = self.public_ip
-  #  }
-  #  inline = ["echo hello "]
-  #} 
   #{
    # Name = "practica1"
     #Environment = "Dev"
